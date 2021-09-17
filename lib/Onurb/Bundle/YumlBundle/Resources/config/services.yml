@@ -32,5 +32,7 @@ services:
                 style: '%onurb_yuml.style%'
 
     Onurb\Bundle\YumlBundle\Command\YumlCommand:
+        arguments:
+            - '@Psr\Container\ContainerInterface'
         tags:
             - { name: 'console.command', command: 'yuml:mappings' }
