@@ -6,7 +6,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use App\Kernel;
+use Psr\Container\ContainerInterface;
 
 /**
  * Generate and save Yuml images for metadata graphs.
@@ -18,8 +18,8 @@ class YumlCommand extends Command
 {
     private $container;
 
-    public function __construct(Kernel $kernel) {
-        $this->container = $kernel->getContainer();
+    public function __construct(ContainerInterface $container) {
+        $this->container = $container;
         parent::__construct();
     }
 
