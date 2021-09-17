@@ -1,5 +1,5 @@
 {
-    "name":                 "onurb/doctrine-yuml-bundle",
+    "name":                 "nepoh/doctrine-yuml-bundle",
     "description":          "Symfony Bundle to visualize the mapping of your entities with Yuml",
     "keywords":             ["yuml", "mapping", "doctrine", "diagram", "graph", "uml", "bundle", "symfony"],
     "type":                 "symfony-bundle",
