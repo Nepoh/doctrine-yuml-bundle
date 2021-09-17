@@ -6,6 +6,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+use App\Kernel;
 
 /**
  * Generate and save Yuml images for metadata graphs.
@@ -15,6 +16,19 @@ use Symfony\Component\Console\Output\OutputInterface;
  **/
 class YumlCommand extends Command
 {
+    private $container;
+
+    public function __construct(Kernel $kernel) {
+        $this->container = $kernel->getContainer();
+        parent::__construct();
+    }
+
+    protected function getContainer()
+    {
+        return $this->container;
+    }
+
+    
     protected function configure()
     {
         $this->setName('yuml:mappings')
